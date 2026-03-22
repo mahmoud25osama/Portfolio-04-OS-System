@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #adc6ff;
+  --color-secondary: #d0bcff;
+  --color-tertiary: #dac3a6;
+  --color-surface-dim: #121222;
+  --color-surface: #121222;
+  --color-surface-container-lowest: #0c0c1d;
+  --color-surface-container-low: #1a1a2b;
+  --color-surface-container: #1e1e2f;
+  --color-surface-container-high: #29283a;
+  --color-surface-container-highest: #333345;
+  --color-on-surface: #e3e0f8;
+  --color-on-surface-variant: #c8c5cd;
+  --color-outline: #929097;
+  --color-outline-variant: #47464c;
+  --color-error: #ffb4ab;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply backdrop-blur-2xl bg-surface-container-low/80 border border-white/10 shadow-2xl;
+  }
+  .mesh-bg {
+    background-color: var(--color-surface-dim);
+    background-image:
+      radial-gradient(at 0% 0%, hsla(223, 100%, 84%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(261, 100%, 74%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(223, 100%, 84%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(261, 100%, 74%, 0.1) 0px, transparent 50%);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
